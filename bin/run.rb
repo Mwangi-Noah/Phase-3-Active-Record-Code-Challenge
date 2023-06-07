@@ -11,7 +11,9 @@ ActiveRecord::Base.establish_connection(
 )
 
 # Run migrations
-require_relative '../db/migrate/001_create_reviews'
+require_relative '../db/migrate/20230607150601_create_users.rb'
+
+
 
 # Load seed data
 require_relative '../db/seeds'

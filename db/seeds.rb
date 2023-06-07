@@ -1,9 +1,10 @@
 puts "🌱 Seeding data..."
 
-user1 = User.create(name: "John")
-user2 = User.create(name: "Jane")
-product1 = Product.create(name: "Product 1")
-product2 = Product.create(name: "Product 2")
+user1 = User.create(name: "Noah")
+user2 = User.create(name: "Mwangi_N")
+user3 = User.create(name: "Nora")
+product1 = Product.create(name: "Dell Optiplex")
+product2 = Product.create(name: "Compaq")
 
 product1.leave_review(user1, 5, "Great product!")
 product1.leave_review(user2, 4, "Good product.")

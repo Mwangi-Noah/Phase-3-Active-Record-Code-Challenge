@@ -1,5 +1,4 @@
-# migration file
-class CreateReviews < ActiveRecord::Migration[6.0]
+class CreateReviews < ActiveRecord::Migration[6.1]
   def change
     create_table :reviews do |t|
       t.integer :star_rating
