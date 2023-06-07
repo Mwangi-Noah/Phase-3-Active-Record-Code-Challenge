@@ -1,21 +1,18 @@
 puts "🌱 Seeding data..."
 
-#uUsed a previous class challenge as basis.
-# Create dummy users
-5.times do
-  User.create(name: Faker::Name.name)
-end
+user1 = User.create(name: "John")
+user2 = User.create(name: "Jane")
+product1 = Product.create(name: "Product 1")
+product2 = Product.create(name: "Product 2")
 
-# Create dummy products
-3.times do
-  Product.create(name: Faker::Commerce.product_name)
-end
+product1.leave_review(user1, 5, "Great product!")
+product1.leave_review(user2, 4, "Good product.")
+product2.leave_review(user1, 3, "Average product.")
 
-# Leave reviews for products
-Product.all.each do |product|
-  User.all.sample(3).each do |user|
-    star_rating = rand(1..5)
-    comment = Faker::Lorem.sentence
-    product.leave_review(user, star_rating, comment)
-  end
-end
+puts "User's favorite product: #{user1.favorite_product.name}"
+puts "Average rating for Product 1: #{product1.average_rating}"
+
+user1.remove_reviews(product1)
+
+puts "Reviews for Product 1:"
+product1.print_all_reviews

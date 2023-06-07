@@ -1,8 +1,8 @@
 # run.rb
 require 'active_record'
-require_relative 'models/review'
-require_relative 'models/product'
-require_relative 'models/user'
+require_relative '../app/models/review'
+require_relative '../app/models/product'
+require_relative '../app/models/user'
 
 # Configure ActiveRecord connection
 ActiveRecord::Base.establish_connection(
@@ -11,10 +11,10 @@ ActiveRecord::Base.establish_connection(
 )
 
 # Run migrations
-require_relative 'db/migrate/001_create_reviews'
+require_relative '../db/migrate/001_create_reviews'
 
 # Load seed data
-require_relative 'db/seeds'
+require_relative '../db/seeds'
 
 # Test the methods
 puts "User's favorite product: #{User.first.favorite_product.name}"
